@@ -1,7 +1,7 @@
 {
   "name": "boron-react-modal",
   "description": "Modal component for ReactJS",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": {
     "name": "Tigran Harutyunyan",
     "email": "therealtx@gmail.com"
@@ -12,7 +12,8 @@
     "url": "https://github.com/therealtx/react-boron"
   },
   "dependencies": {
-    "react": "*"
+    "react": "*",
+    "domkit": "^0.0.1"
   },
   "homepage": "https://github.com/therealtx/react-boron",
   "keywords": [
