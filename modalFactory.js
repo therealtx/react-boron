@@ -6,7 +6,7 @@ var PropTypes =         require('prop-types');
 
 module.exports = function(animation){
 
-    return createReactClass({
+    var Modal = createReactClass({
 
 
         getDefaultProps: function() {
@@ -37,14 +37,14 @@ module.exports = function(animation){
 
         addTransitionListener: function(node, handle){
             if (node) {
-              var endListener = function(e) {
-                  if (e && e.target !== node) {
-                      return;
-                  }
-                  transitionEvents.removeEndEventListener(node, endListener);
-                  handle();
-              };
-              transitionEvents.addEndEventListener(node, endListener);
+                var endListener = function(e) {
+                    if (e && e.target !== node) {
+                        return;
+                    }
+                    transitionEvents.removeEndEventListener(node, endListener);
+                    handle();
+                };
+                transitionEvents.addEndEventListener(node, endListener);
             }
         },
 
@@ -76,14 +76,14 @@ module.exports = function(animation){
             }
 
             if (this.props.backdropStyle) {
-              var prefixedBackdropStyle = appendVendorPrefix(this.props.backdropStyle);
+                var prefixedBackdropStyle = appendVendorPrefix(this.props.backdropStyle);
                 for (var style in prefixedBackdropStyle) {
                     backdropStyle[style] = prefixedBackdropStyle[style];
                 }
             }
 
             if (this.props.contentStyle) {
-              var prefixedContentStyle = appendVendorPrefix(this.props.contentStyle);
+                var prefixedContentStyle = appendVendorPrefix(this.props.contentStyle);
                 for (var style in prefixedContentStyle) {
                     contentStyle[style] = prefixedContentStyle[style];
                 }
@@ -96,16 +96,16 @@ module.exports = function(animation){
                 this.addTransitionListener(node, this.leave);
             }
 
-            return (React.createElement("span", null, 
-                React.createElement("div", {ref: "modal", style: modalStyle, className: this.props.className}, 
-                    sharp, 
-                    React.createElement("div", {ref: "content", tabIndex: "-1", style: contentStyle}, 
+            return (React.createElement("span", null,
+                React.createElement("div", {ref: "modal", style: modalStyle, className: this.props.className},
+                    sharp,
+                    React.createElement("div", {ref: "content", tabIndex: "-1", style: contentStyle},
                         this.props.children
                     )
-                ), 
+                ),
                 backdrop
-             ))
-            ;
+            ))
+                ;
         },
 
         leave: function(){
@@ -128,9 +128,9 @@ module.exports = function(animation){
             });
 
             setTimeout(function(){
-              var ref = this.props.animation.getRef();
-              var node = this.refs[ref];
-              this.addTransitionListener(node, this.enter);
+                var ref = this.props.animation.getRef();
+                var node = this.refs[ref];
+                this.addTransitionListener(node, this.enter);
             }.bind(this), 0);
         },
 
@@ -151,8 +151,8 @@ module.exports = function(animation){
 
         listenKeyboard: function(event) {
             if (this.props.keyboard &&
-                    (event.key === "Escape" ||
-                     event.keyCode === 27)) {
+                (event.key === "Escape" ||
+                event.keyCode === 27)) {
                 this.hide();
             }
         },
@@ -165,4 +165,19 @@ module.exports = function(animation){
             window.removeEventListener("keydown", this.listenKeyboard, true);
         }
     });
-}
+    
+    Modal.propTypes = {
+        className: PropTypes.string,
+        keyboard: PropTypes.bool, // Close the modal when esc is pressed? Defaults to true.
+        onShow: PropTypes.func,
+        onHide: PropTypes.func,
+        animation: PropTypes.object,
+        backdrop: PropTypes.bool,
+        closeOnClick: PropTypes.bool,
+        modalStyle: PropTypes.object,
+        backdropStyle: PropTypes.object,
+        contentStyle: PropTypes.object
+    };
+    
+    return Modal;
+};
