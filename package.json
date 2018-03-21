@@ -11,6 +11,9 @@
     "type": "git",
     "url": "https://github.com/therealtx/react-boron"
   },
+  "dependencies": {
+    "react": "*"
+  },
   "homepage": "https://github.com/therealtx/react-boron",
   "keywords": [
     "reactjs",

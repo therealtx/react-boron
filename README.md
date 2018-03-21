@@ -1,12 +1,9 @@
-Boron
+Boron React Modal
 =====
 
 [![Pair on this](https://tf-assets-staging.s3.amazonaws.com/badges/thinkful_repo_badge.svg)](http://start.thinkful.com/react/?utm_source=github&utm_medium=badge&utm_campaign=boron)
 
 A collection of dialog animations with React.js.
-
-* React 0.14+ Use `boron 0.2`
-* React 0.12+ Use `boron 0.1`
 
 ## Demo & Examples
 
