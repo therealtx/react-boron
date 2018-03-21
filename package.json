@@ -1,7 +1,7 @@
 {
   "name": "boron-react-modal",
   "description": "Modal component for ReactJS",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": {
     "name": "Tigran Harutyunyan",
     "email": "therealtx@gmail.com"

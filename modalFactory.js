@@ -56,6 +56,8 @@ module.exports = function(animation){
 
         render: function() {
 
+            console.error("ASHXATEC");
+
             var hidden = this.hasHidden();
             if (hidden) return null;
 

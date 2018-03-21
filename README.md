@@ -9,13 +9,6 @@ A collection of dialog animations with React.js.
 
 Live demo: [yuanyan.github.io/boron](http://yuanyan.github.io/boron/)
 
-To build the examples locally, run:
-
-```
-npm install
-gulp dev
-```
-
 Then open [`localhost:9999`](http://localhost:9999) in a browser.
 
 ## Installation
