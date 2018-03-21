@@ -22,16 +22,15 @@ Then open [`localhost:9999`](http://localhost:9999) in a browser.
 
 The easiest way to use `boron` is to install it from NPM and include it in your own React build process (using [Browserify](http://browserify.org), etc).
 
-You can also use the standalone build by including `dist/boron.js` in your page. If you use this, make sure you have already included React, and it is available as a global variable.
 
 ```
-npm install boron --save
+npm install boron-react-modal --save
 ```
 
 ## Usage
 
 ``` javascript
-var Modal = require('boron/DropModal');
+var Modal = require('boron-react-modal/DropModal');
 var Example = React.createClass({
     showModal: function(){
         this.refs.modal.show();
@@ -71,7 +70,7 @@ The values for the CSS properties will either add new properties or override the
 
 Modal with 80% width:
 ``` javascript
-var Modal = require('boron/ScaleModal');
+var Modal = require('boron-react-modal/ScaleModal');
 
 // Style object
 var modalStyle = {
@@ -101,7 +100,7 @@ var Example = React.createClass({
 
 Red backdrop with a blue modal, rotated at 45 degrees:
 ``` javascript
-var Modal = require('boron/FlyModal');
+var Modal = require('boron-react-modal/FlyModal');
 
 // Individual styles for the modal, modal content, and backdrop
 var modalStyle = {
